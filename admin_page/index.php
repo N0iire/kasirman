@@ -52,7 +52,7 @@ if ($_SESSION['login']) {
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description" content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Admin Page</title>
+    <title>Admin Page </title>
     <link rel="canonical" href="" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="19x16" href="plugins/images/favicon copy.png">
