@@ -57,6 +57,8 @@ if ($_SESSION['login']) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="19x16" href="plugins/images/favicon copy.png">
     <link rel="shortcut icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="image/x-icon">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <!-- sweetalert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
@@ -248,14 +250,14 @@ if ($_SESSION['login']) {
                     })
 
                     function success() {
-                        await Toast.fire({
+                        Toast.fire({
                             icon: 'success',
                             title: 'Sukses'
                         })
                     }
 
                     function failed() {
-                        await Toast.fire({
+                        Toast.fire({
                             icon: 'error',
                             title: 'Gagal'
                         })
