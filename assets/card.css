@@ -1,0 +1,104 @@
+.container {
+    position: relative;
+    width: 70%;
+    margin-bottom: 25px;
+    
+
+  }
+  
+  .image {
+    display: block;
+    width: 110%;
+    height: 230px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px #000000
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 58px;
+    right: 0;
+    overflow: hidden;
+    width: 70%;
+    height: 0;
+    transition: .4s ease;
+  }
+  
+  .container:hover .overlay {
+    height: 30%;
+  }
+
+  .menu{
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: small;
+      font-weight: regular;
+      position: absolute;
+      top: 45px;
+      left: 25px;
+      background: #fff;
+      padding: 3px 10px;
+      border-radius: 8px;
+  }
+
+  .shadow-dreamy {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+}
+
+  .harga{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: small;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    background: rgb(17,153,142);
+    background: linear-gradient(31deg, rgba(17,153,142,1) 0%, rgba(56,239,125,1) 100%);
+    padding: 3px 10px;
+    border-radius: 8px;
+    color: rgb(255, 231, 231);
+  }
+  
+
+  .btn-grad {background-color: rgba(56,239,125,1);}
+  .btn-grad {
+    left: 10px;
+     margin: 5px;
+     padding: 10px 30px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 100% auto;
+     color: white;            
+     border-radius: 10px;
+     display: block;
+     border: 0;
+     position: absolute;
+     
+   }
+   
+        
+         
+
+   .btn-grad:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   }
+  
+  .button {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

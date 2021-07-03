@@ -1,0 +1,80 @@
+.login-dark {
+    height:100vh;
+    background: rgb(17,153,142);
+  background: linear-gradient(31deg, rgba(17,153,142,1) 0%, rgba(56,239,125,1) 100%);  color: #fff;
+    background-size:cover;
+    position:relative;
+  }
+  
+  .login-dark form {
+    max-width:390px;
+    width:90%;
+    background-color:#f5f5f5;
+    padding:40px;
+    border-radius:14px;
+    transform:translate(-50%, -50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    color:rgb(17, 17, 17);
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+  }
+  
+  .login-dark .illustration {
+    align-self:center;
+    padding:15px 0 20px;
+    width: 230px;
+    height: auto;
+  }
+
+  .login-dark img{
+      margin-left: 35px;
+    width: 230px;
+    height: auto;
+  }
+  
+  .login-dark form .form-control {
+    background:none;
+    border:none;
+    border-bottom:1px solid #434a52;
+    border-radius:0;
+    box-shadow:none;
+    outline:none;
+    color:inherit;
+  }
+  
+  .login-dark form .btn-primary {
+    background:#38ef7d;
+    border:none;
+    border-radius:14px;
+    padding:11px;
+    box-shadow:none;
+    margin-top:26px;
+    text-shadow:none;
+    outline:none;
+  }
+  
+  .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+    background:#11998e;
+    outline:none;
+  }
+  
+  .login-dark form .forgot {
+    display:block;
+    text-align:center;
+    font-size:12px;
+    color:#6f7a85;
+    opacity:0.9;
+    text-decoration:none;
+  }
+  
+  .login-dark form .forgot:hover, .login-dark form .forgot:active {
+    opacity:1;
+    text-decoration:none;
+  }
+  
+  .login-dark form .btn-primary:active {
+    transform:translateY(1px);
+  }
+  
+  
