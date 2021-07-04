@@ -64,6 +64,7 @@ if ($_SESSION['login']) {
     <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
 
     <style>
         .colored-toast.swal2-icon-success {
@@ -122,7 +123,7 @@ if ($_SESSION['login']) {
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/kalasenja-text.png" alt="homepage" />
+                            <img src="plugins/images/kasirman-logo.png" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -226,7 +227,7 @@ if ($_SESSION['login']) {
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="height : 100hv;">
 
             <!-- Container fluid  -->
             <!-- ============================================================== -->
