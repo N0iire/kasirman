@@ -24,6 +24,7 @@ class Kategori
         }
     }
 
+
     /**
      * Get all kategori from database
      * 

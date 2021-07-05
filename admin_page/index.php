@@ -7,7 +7,7 @@ include_once('../controller/DetailTransaksiController.php');
 include_once('../controller/KategoriController.php');
 include_once('../controller/Function.php');
 if ($_SESSION['login']) {
-    if (time() - $_SESSION["login_time_stamp"] > 600) {
+    if (time() - $_SESSION["login_time_stamp"] > 6000) {
         session_unset();
         session_destroy();
         header("Location:../index.php");
@@ -336,7 +336,7 @@ if ($_SESSION['login']) {
                     // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
 
                     if (willDelete.isConfirmed) {
-                        Swal.fire('Saved!', '', 'success', {
+                        Swal.fire('Terhapus!', '', 'success', {
                             timer: 1500
                         })
                         window.location = urlToRedirect;
