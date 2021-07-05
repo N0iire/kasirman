@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
         <form method="post" action="login.php" name="login">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration">
-                <img src="../assets/images/login.svg" alt="login">
+                <img src="../assets/images/kasirman-clear.png" alt="login">
             </div>
             <div class="form-group">
                 <input class="form-control" type="text" name="id" placeholder="Username" required>

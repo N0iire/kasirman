@@ -11,7 +11,7 @@ if (isset($_SESSION['id'])) {
 
         <div class="">
             <div class="logo-text">
-                <img src="assets/images/kalasenja-text.png" alt="logo" />
+                <img src="assets/images/kasirman-logo.png" alt="logo" />
             </div>
 
         </div>
