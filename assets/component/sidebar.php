@@ -3,17 +3,21 @@
         <h1><a href="index.php" class="logo">K.</a></h1>
         <ul class="list-unstyled components mb-5">
             <li class="active">
-                <a href="#"><span class="fa fa-home"></span> Coffee</a>
+                <a href="index.php"><span class="fa fa-home"></span> Semua</a>
             </li>
-            <li>
-                <a href="#"><span class="fa fa-user"></span> Light meal</a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-sticky-note"></span> Main Course</a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-cogs"></span> Dessert</a>
-            </li>
+            <?php
+            foreach ($kategori->get_all() as $data) {
+                $encry->word = $data['id_kategori'];
+                $id_kategori = $encry->encr();
+            ?>
+
+                <li class="active">
+                    <a href="?k=<?php echo $data['nama_kategori']; ?>&i=<?php echo $id_kategori; ?>"><span class="fa fa-home"></span> <?php echo $data['nama_kategori']; ?></a>
+                </li>
+            <?php
+            }
+            ?>
+
         </ul>
     </nav>
 </div>
