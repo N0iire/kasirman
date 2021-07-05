@@ -57,11 +57,14 @@ if ($_SESSION['login']) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="19x16" href="plugins/images/favicon copy.png">
     <link rel="shortcut icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="image/x-icon">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <!-- sweetalert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
 
     <style>
         .colored-toast.swal2-icon-success {
@@ -120,7 +123,7 @@ if ($_SESSION['login']) {
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/kalasenja-text.png" alt="homepage" />
+                            <img src="plugins/images/kasirman-logo.png" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -224,7 +227,7 @@ if ($_SESSION['login']) {
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="height : 100hv;">
 
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -248,14 +251,14 @@ if ($_SESSION['login']) {
                     })
 
                     function success() {
-                        await Toast.fire({
+                        Toast.fire({
                             icon: 'success',
                             title: 'Sukses'
                         })
                     }
 
                     function failed() {
-                        await Toast.fire({
+                        Toast.fire({
                             icon: 'error',
                             title: 'Gagal'
                         })
