@@ -167,6 +167,7 @@ if ($_SESSION['login']) {
 
 
         <?php
+
         if (isset($_GET['p']) == 'sukses') {
             //toast login sukses
             echo "<script> const Toast = Swal.mixin({
@@ -206,7 +207,7 @@ if ($_SESSION['login']) {
                 icon: 'success',
                 title: 'Pesan Berhasil!'
             })</script>";
-        } else {
+        } else if (isset($_GET['i']) == 'gagal') {
             echo "<script>    
         const Toast = Swal.mixin({
             toast: true,
