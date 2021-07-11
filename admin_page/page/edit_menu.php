@@ -97,7 +97,7 @@ if (isset($_POST['edit'])) {
 
                     <br>
                     <div>
-                        <input type="submit" name="edit" value="Ubah menu" class="btn btn-primary">
+                        <input type="submit" name="edit" value="Ubah menu" class="btn btn-warning">
                     </div>
                 </form>
             </tbody>
