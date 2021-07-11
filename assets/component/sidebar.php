@@ -1,4 +1,4 @@
-<div class="aqua-gradient shadow-md">
+<div class="aqua-gradient shadow-md" style="height: 200hv; position: fixed;">
     <nav id="sidebar" class="active ">
         <h1><a href="index.php" class="logo">K.</a></h1>
         <ul class="list-unstyled components mb-5">

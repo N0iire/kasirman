@@ -10,7 +10,7 @@
 }
 .card-box:hover {
     text-decoration: none;
-    color: #f1f1f1;
+    color: #f1f1f1 !important;
 }
 .card-box:hover .icon i {
     font-size: 100px;
@@ -52,7 +52,7 @@
     text-decoration: none;
 }
 .card-box:hover .card-box-footer {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3) !important;
 }
 .bg-blue {
     background: linear-gradient(45deg,#4099ff,#73b4ff) !important;
