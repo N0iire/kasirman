@@ -7,7 +7,7 @@ include_once('../controller/DetailTransaksiController.php');
 include_once('../controller/KategoriController.php');
 include_once('../controller/Function.php');
 if ($_SESSION['login']) {
-    if (time() - $_SESSION["login_time_stamp"] > 600) {
+    if (time() - $_SESSION["login_time_stamp"] > 6000) {
         session_unset();
         session_destroy();
         header("Location:../index.php");
@@ -107,9 +107,9 @@ if ($_SESSION['login']) {
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin5" style="background-color: #38ef7d;">
-            <nav class="navbar top-navbar navbar-expand-md" style="background-color: #38ef7d;">
-                <div class="navbar-header" data-logobg="skin6" style="background-color: #38ef7d;">
+        <header class="topbar" data-navbarbg="skin5" style="background-color: rgba(239,142,56,1) 100%;">
+            <nav class="navbar top-navbar navbar-expand-md" style="background:  rgba(239,142,56,1) 100%;">
+                <div class="navbar-header" data-logobg="skin6" style="background:  rgba(239,142,56,1) 100%;">
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
@@ -336,7 +336,7 @@ if ($_SESSION['login']) {
                     // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
 
                     if (willDelete.isConfirmed) {
-                        Swal.fire('Saved!', '', 'success', {
+                        Swal.fire('Terhapus!', '', 'success', {
                             timer: 1500
                         })
                         window.location = urlToRedirect;

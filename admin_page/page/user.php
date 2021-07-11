@@ -1,5 +1,4 @@
 <?php $data_kasir = $user->get_all(); ?>
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -11,6 +10,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <div class="row">
     <!-- Column -->
@@ -37,11 +37,15 @@
                                     <td align="center" class="align-middle"><?php echo $data['id_kasir']; ?><br></td>
                                     <td align="center" class="align-middle">
                                     <div class="btn-group">
+                                        <?php
+                                        $encry->word = $data['id_kasir'];
+                                        $id_kasir = $encry->encr();
+                                        ?>
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                         Action
                                         </button>
                                         <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="edit_user.php">Edit</a>
+                                        <a class="dropdown-item" href="?p=edit_user&e=<?php echo $id_kasir?>">Edit</a>
                                         <a class="dropdown-item" href="delete_user.php">Delete</a>
                                         </div>
                                     </div>

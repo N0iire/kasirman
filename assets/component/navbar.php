@@ -31,15 +31,14 @@ if (isset($_SESSION['id'])) {
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="admin_page/index.php">Admin Page</a>
-                                    <a class="dropdown-item" href="#">Transaksi</a>
-                                    <a class="dropdown-item" href="#">Akun</a>
+                                    <a class="dropdown-item" href="admin_page/index.php?p=transaksi">Transaksi</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="index.php?q=logout">Logout <i class="bi bi-power"></i></a>
                                 </div>
                             </div>
                         </li>
 
-                        <li class="nav-item"><button class="btn btn-success item_count">
+                        <li class="nav-item"><button class="btn btn-warning item_count">
                                 <span class="bi-cart-fill"></span>
                                 <span>0</span>
                             </button>
