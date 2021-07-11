@@ -76,9 +76,9 @@ if ($_SESSION['login']) {
                 $subtotal = $pembelian * $cart[$i]['harga'];
                 $data_transaksi = $detail_transaksi->store($no_struk, $id_menu, $pembelian, $subtotal);
             }
-            echo "Pesan Berhasil";
+            header("location:?i=berhasil");
         } else {
-            echo "Gagal";
+            header("location:?i=gagal");
         }
     }
 } else {
@@ -138,6 +138,26 @@ if ($_SESSION['login']) {
             left: 0;
             width: 100%;
         }
+
+        .colored-toast.swal2-icon-success {
+            background-color: #a5dc86 !important;
+        }
+
+        .colored-toast.swal2-icon-error {
+            background-color: #f27474 !important;
+        }
+
+        .colored-toast .swal2-title {
+            color: white;
+        }
+
+        .colored-toast .swal2-close {
+            color: white;
+        }
+
+        .colored-toast .swal2-content {
+            color: white;
+        }
     </style>
 </head>
 
@@ -168,7 +188,45 @@ if ($_SESSION['login']) {
                 })
                 </script>
             ";
+        } else if (isset($_GET['i']) == 'berhasil') {
+            echo "<script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                showConfirmButton: false,
+                timer: 3500,
+                timerProgressBar: true
+            })
+    
+            Toast.fire({
+                icon: 'success',
+                title: 'Pesan Berhasil!'
+            })</script>";
+        } else {
+            echo "<script>    
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+   
+            Toast.fire({
+                icon: 'error',
+                title: 'pesan Gagal!'
+            })
+        </script>";
         }
+
         ?>
 
         <div class="row">
