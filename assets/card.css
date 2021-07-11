@@ -58,14 +58,14 @@
     top: 15px;
     left: 25px;
     background: rgb(17,153,142);
-    background: linear-gradient(31deg, rgba(17,153,142,1) 0%, rgba(56,239,125,1) 100%);
+    background:  rgba(239,142,56,1) 100%;
     padding: 3px 10px;
     border-radius: 8px;
     color: rgb(255, 231, 231);
   }
   
 
-  .btn-grad {background-color: rgba(56,239,125,1);}
+  .btn-grad {background: rgba(239,142,56,1) 100%}
   .btn-grad {
     left: 10px;
      margin: 5px;
