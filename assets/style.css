@@ -8215,9 +8215,9 @@ h1, h2, h3, h4, h5,
 #sidebar {
   min-width: 270px;
   max-width: 270px;
-
   background: rgb(17,153,142);
   background: linear-gradient(31deg, rgba(16,141,199,1) 0%, rgba(239,142,56,1) 100%);  color: #fff;
+  
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
