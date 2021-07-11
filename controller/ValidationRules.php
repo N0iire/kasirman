@@ -20,14 +20,31 @@ class Validation
             $id_menu = $this->test_input($_POST['id_menu']);
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z-' ]*$/", $id_menu)) {
-                $nameErr = "Only letters and white space allowed";
+                $err_value = "Only letters and white space allowed";
+                return $this->err = $err_value;
             }
         }
         if (empty($_POST['nama_menu'])) {
+            $err_value = "nama menu is required!";
+            return $this->err = $err_value;
         } else {
+            $nama_menu = $this->test_input($_POST['nama_menu']);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/", $nama_menu)) {
+                $err_value = "Only letters and white space allowed";
+                return $this->err = $err_value;
+            }
         }
         if (empty($_POST['deskripsi'])) {
+            $err_value = "deskripsi is required!";
+            return $this->err = $err_value;
         } else {
+            $deskripsi = $this->test_input($_POST['deskripsi']);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/", $deskripsi)) {
+                $err_value = "Only letters and white space allowed";
+                return $this->err = $err_value;
+            }
         }
         if (empty($_POST['nama_kategori'])) {
         } else {
