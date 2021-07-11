@@ -112,4 +112,38 @@ class User
         $_SESSION['login'] = false;
         session_destroy();
     }
+
+    /**
+     * 
+     */
+    public function view($id)
+    {
+        $sql6 = "SELECT * FROM kasir WHERE id_kasir = '$id'";
+        $result = $this->db->query($sql6);
+        $kategori = $result->fetch_assoc();
+
+        return $kategori;
+    }
+
+    /**
+     * 
+     */
+    public function update($id_before)
+    {
+        $id_kasir = $_POST['id_kasir'];
+        $nama_kasir = $_POST['nama_kasir'];
+
+        $sql7 = "UPDATE kasir 
+                 SET 
+                 id_kasir = '$id_kasir', 
+                 nama_kasir = '$nama_kasir' 
+                 WHERE id_kasir = '$id_before'";
+        $query = $this->db->query($sql7);
+        if ($query == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
