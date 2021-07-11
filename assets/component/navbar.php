@@ -11,7 +11,7 @@ if (isset($_SESSION['id'])) {
 
         <div class="">
             <div class="logo-text">
-                <img src="assets/images/kalasenja-text.png" alt="logo" />
+                <img src="assets/images/kasirman-logo.png" alt="logo" />
             </div>
 
         </div>
@@ -31,8 +31,7 @@ if (isset($_SESSION['id'])) {
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="admin_page/index.php">Admin Page</a>
-                                    <a class="dropdown-item" href="#">Transaksi</a>
-                                    <a class="dropdown-item" href="#">Akun</a>
+                                    <a class="dropdown-item" href="admin_page/index.php?p=transaksi">Transaksi</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="index.php?q=logout">Logout <i class="bi bi-power"></i></a>
                                 </div>

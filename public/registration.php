@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
     <div class="login-dark">
         <form method="post" action="" name="login">
             <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><img src="../assets/images/login.svg" alt="login"></div>
+            <div class="illustration"><img src="../assets/images/kasirman-clear.png" alt="login"></div>
             <div class="form-group"><input class="form-control" type="text" name="id" placeholder="Username" required></div>
             <div class="form-group"><input class="form-control" type="text" name="nama" placeholder="Name" required></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
