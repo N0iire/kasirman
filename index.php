@@ -189,43 +189,6 @@ if ($_SESSION['login']) {
                 })
                 </script>
             ";
-        } else if (isset($_GET['i']) == 'berhasil') {
-            echo "<script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-right',
-                iconColor: 'white',
-                customClass: {
-                    popup: 'colored-toast'
-                },
-                showConfirmButton: false,
-                timer: 3500,
-                timerProgressBar: true
-            })
-    
-            Toast.fire({
-                icon: 'success',
-                title: 'Pesan Berhasil!'
-            })</script>";
-        } else if (isset($_GET['i']) == 'gagal') {
-            echo "<script>    
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-   
-            Toast.fire({
-                icon: 'error',
-                title: 'pesan Gagal!'
-            })
-        </script>";
         }
 
         ?>
@@ -260,7 +223,7 @@ if ($_SESSION['login']) {
                     </div>
 
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-3" style="position: fixed; margin-left:900px;">
                     <?php include 'assets/component/cart.php' ?>
                 </div>
             </div>
@@ -278,6 +241,38 @@ if ($_SESSION['login']) {
                 type: 'danger',
                 confirmButtonClass: "btn-danger"
             })
+        }
+
+        function keluar(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+            console.log(urlToRedirect); // verify if this is the right URL
+            Swal.fire({
+                    title: "Kamu yakin ingin keluar?",
+                    icon: "warning",
+                    showDenyButton: true,
+                    confirmButtonText: `Ya`,
+                    dangerMode: true,
+                    denyButtonText: `Tidak`,
+
+                    allowOutsideClick: () => {
+                        const popup = Swal.getPopup()
+                        popup.classList.remove('swal2-show')
+                        setTimeout(() => {
+                            popup.classList.add('animate__animated', 'animate__headShake')
+                        })
+                        setTimeout(() => {
+                            popup.classList.remove('animate__animated', 'animate__headShake')
+                        }, 500)
+                        return false
+                    }
+                })
+                .then((willQuit) => {
+                    // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+                    if (willQuit.isConfirmed) {
+                        window.location = urlToRedirect;
+                    }
+                });
         }
     </script>
 </body>
