@@ -33,7 +33,7 @@ if (isset($_SESSION['id'])) {
                                     <a class="dropdown-item" href="admin_page/index.php">Admin Page</a>
                                     <a class="dropdown-item" href="admin_page/index.php?p=transaksi">Transaksi</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?q=logout">Logout <i class="bi bi-power"></i></a>
+                                    <a class="dropdown-item" href="index.php?q=logout" onclick="keluar(event);">Logout <i class="bi bi-power"></i></a>
                                 </div>
                             </div>
                         </li>
