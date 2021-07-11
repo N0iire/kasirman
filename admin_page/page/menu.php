@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <br>
                     <div>
-                        <input type="submit" name="submit" value="Tambah menu" class="btn btn-warning">
+                        <input type="submit" name="submit" value="Tambah menu" class="btn btn-primary">
                     </div>
                 </form>
             </tbody>

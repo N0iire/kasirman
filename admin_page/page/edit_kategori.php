@@ -89,7 +89,7 @@ if (isset($_POST['edit'])) {
                             <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="<?php echo $data_kategori['nama_kategori'] ?>">
                         </div>
                         <div>
-                            <input type="submit" name="edit" value="Ubah" class="btn btn-warning">
+                            <input type="submit" name="edit" value="Ubah" class="btn btn-primary">
                             <input type="reset" name="cancel" value="cancel" class="btn btn-light">
                         </div>
                     </div>

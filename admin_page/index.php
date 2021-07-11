@@ -107,9 +107,9 @@ if ($_SESSION['login']) {
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin5" style="background-color: rgba(239,142,56,1) 100%;">
-            <nav class="navbar top-navbar navbar-expand-md" style="background:  rgba(239,142,56,1) 100%;">
-                <div class="navbar-header" data-logobg="skin6" style="background:  rgba(239,142,56,1) 100%;">
+        <header class="topbar" data-navbarbg="skin5" style="background-color: #38ef7d;">
+            <nav class="navbar top-navbar navbar-expand-md" style="background-color: #38ef7d;">
+                <div class="navbar-header" data-logobg="skin6" style="background-color: #38ef7d;">
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->

@@ -117,8 +117,8 @@ if ($_SESSION['login']) {
 
         .cart {
             border-radius: 20px;
-            background: rgb(253, 200, 48);
-            background: linear-gradient(31deg, rgba(253, 200, 48, 1) 0%, rgba(243, 115, 53, 1) 72%);
+            background: rgb(17, 153, 142);
+            background: linear-gradient(31deg, rgba(17, 153, 142, 1) 0%, rgba(56, 239, 125, 1) 100%);
             color: #fff;
         }
 
