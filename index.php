@@ -189,43 +189,6 @@ if ($_SESSION['login']) {
                 })
                 </script>
             ";
-        } else if (isset($_GET['i']) == 'berhasil') {
-            echo "<script>
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-right',
-                iconColor: 'white',
-                customClass: {
-                    popup: 'colored-toast'
-                },
-                showConfirmButton: false,
-                timer: 3500,
-                timerProgressBar: true
-            })
-    
-            Toast.fire({
-                icon: 'success',
-                title: 'Pesan Berhasil!'
-            })</script>";
-        } else if (isset($_GET['i']) == 'gagal') {
-            echo "<script>    
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-   
-            Toast.fire({
-                icon: 'error',
-                title: 'pesan Gagal!'
-            })
-        </script>";
         }
 
         ?>
@@ -260,7 +223,7 @@ if ($_SESSION['login']) {
                     </div>
 
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-3" style="position: fixed; margin-left:900px;">
                     <?php include 'assets/component/cart.php' ?>
                 </div>
             </div>

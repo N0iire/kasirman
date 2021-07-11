@@ -37,7 +37,7 @@ if (!empty($_SESSION['cart'])) {
         $total_bayar = 0;
     }
 ?>
-    <div class="card" style="border-radius: 15px;">
+    <div class="card" style="border-radius: 15px; ">
         <div class="card-header cart">
             <h4>Pesan Baru</h4>
             <small><?php echo count($cart); ?> jenis pesanan dalam keranjang </small>
@@ -58,7 +58,7 @@ if (!empty($_SESSION['cart'])) {
                         <span><b><?php echo $cart[$i]['nama_menu'] ?></b></span><br>
                         <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input class="form-control float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
                     </div>
                 </div>
@@ -77,12 +77,10 @@ if (!empty($_SESSION['cart'])) {
             <form action="" method="POST">
                 <div class="row mb-3">
 
-                    <div class="col-md-6 pull-left">
+                    <div class="col-md-12 pull-left">
                         <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli" required>
                     </div>
-                    <div class=" col-md-6 float-right">
-                        <button class="btn btn-warning float-right">Ubah</button>
-                    </div>
+
                 </div>
                 <div class="row mb-2">
                     <div class="col-md-6 float-left">
@@ -111,12 +109,10 @@ if (!empty($_SESSION['cart'])) {
 
         <div class="card-footer">
             <div class="row mb-3">
-                <div class="col-md-6 pull-left">
+                <div class="col-md-12 pull-left">
                     <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
                 </div>
-                <div class=" col-md-6 float-right">
-                    <button class="btn btn-warning float-right text-white">Ubah</button>
-                </div>
+
             </div>
             <div class="row mb-2">
                 <div class="col-md-6 float-left">
