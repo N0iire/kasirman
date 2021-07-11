@@ -81,7 +81,7 @@ if (!empty($_SESSION['cart'])) {
                         <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli" required>
                     </div>
                     <div class=" col-md-6 float-right">
-                        <button class="btn btn-success float-right">Ubah</button>
+                        <button class="btn btn-warning float-right">Ubah</button>
                     </div>
                 </div>
                 <div class="row mb-2">
@@ -115,7 +115,7 @@ if (!empty($_SESSION['cart'])) {
                     <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
                 </div>
                 <div class=" col-md-6 float-right">
-                    <button class="btn btn-success float-right">Ubah</button>
+                    <button class="btn btn-warning float-right text-white">Ubah</button>
                 </div>
             </div>
             <div class="row mb-2">
