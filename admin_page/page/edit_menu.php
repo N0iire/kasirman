@@ -1,5 +1,6 @@
 <?php
 $data_menu = $menu->view($id_for_edit);
+$data_kategori = $kategori->get_all();
 if (isset($_POST['edit'])) {
 
     if ($menu->update($id_for_edit)) {
@@ -85,7 +86,7 @@ if (isset($_POST['edit'])) {
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga</label>
-                        <input type="text" class="form-control" id="harga" name="harga">
+                        <input type="text" class="form-control" id="harga" name="harga" value="<?php echo $data_menu['harga'] ?>">
                     </div>
                     <div class="custom-file">
                         <input name="gambar" type="file" class="custom-file-input" id="customFile">
