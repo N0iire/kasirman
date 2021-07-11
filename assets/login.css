@@ -1,7 +1,6 @@
 .login-dark {
     height:100vh;
-    background: rgb(17,153,142);
-  background: linear-gradient(31deg, rgba(17,153,142,1) 0%, rgba(56,239,125,1) 100%);  color: #fff;
+    background: linear-gradient(31deg, rgba(16,141,199,1) 0%, rgba(239,142,56,1) 100%);  color: #fff; color: #fff;
     background-size:cover;
     position:relative;
   }
@@ -44,7 +43,7 @@
   }
   
   .login-dark form .btn-primary {
-    background:#38ef7d;
+    background:rgba(239,142,56,1) 100%;
     border:none;
     border-radius:14px;
     padding:11px;
@@ -55,7 +54,7 @@
   }
   
   .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
-    background:#11998e;
+    background:#f37335;
     outline:none;
   }
   
