@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("./controller/db_config.php");
 include_once('./controller/UserController.php');
 include_once('./controller/MenuController.php');
 include_once('./controller/TransaksiController.php');
@@ -76,6 +77,7 @@ if ($_SESSION['login']) {
                 $subtotal = $pembelian * $cart[$i]['harga'];
                 $data_transaksi = $detail_transaksi->store($no_struk, $id_menu, $pembelian, $subtotal);
             }
+            unset($_SESSION['cart']);
             header("location:?i=berhasil");
         } else {
             header("location:?i=gagal");
@@ -167,10 +169,10 @@ if ($_SESSION['login']) {
 
 
         <?php
-
-        if (isset($_GET['p']) == 'sukses') {
-            //toast login sukses
-            echo "<script> const Toast = Swal.mixin({
+        if (isset($_GET['p'])) {
+            if ($_GET['p'] == 'sukses') {
+                //toast login sukses
+                echo "<script> const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-start',
                 showConfirmButton: false,
@@ -189,8 +191,53 @@ if ($_SESSION['login']) {
                 })
                 </script>
             ";
+            }
         }
-
+        //toast pembayaran sukses
+        if (isset($_GET['i'])) {
+            if ($_GET['i'] == 'berhasil') {
+                echo "<script> const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-start',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+    
+           
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Pembayaran berhasil'
+                })
+                </script>
+            ";
+            }
+            if ($_GET['i'] == 'gagal') {
+                echo "<script> const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-start',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+    
+           
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Pembayaran berhasil'
+                })
+                </script>
+            ";
+            }
+        }
         ?>
 
         <div class="row">
@@ -199,7 +246,14 @@ if ($_SESSION['login']) {
             <!--Navbar-->
             <?php include 'assets/component/navbar.php' ?>
 
+            <?php if (isset($_GET['k'])) { ?>
+                <div class="alert alert-success" role="alert">
+                    Kategori : <b>"<?php echo $_GET['k'] ?>"</b>
+                </div>
+            <?php } ?>
+
             <div class="row">
+
                 <div class="col-md-8">
 
                     <div class="row">
@@ -233,6 +287,18 @@ if ($_SESSION['login']) {
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+
         function inputcart() {
             Swal.fire({
                 icon: 'warning',

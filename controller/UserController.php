@@ -1,5 +1,4 @@
 <?php
-include("db_config.php");
 
 class User
 {
@@ -146,4 +145,15 @@ class User
         }
     }
 
+    public function destroy($id)
+    {
+        $sql1 = "DELETE FROM kasir WHERE id_kasir = '$id'";
+        $query = $this->db->query($sql1);
+        $result = $query;
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

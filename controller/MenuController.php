@@ -63,7 +63,11 @@ class Menu
         $nama_menu = $_POST['nama_menu'];
         $id_menu = $_POST['id_menu'];
         $id_kategori = $_POST['kategori'];
-        $status = $_POST['status'];
+        if (empty($_POST['status'])) {
+            $status = "N";
+        } else {
+            $status = $_POST['status'];
+        }
         $deskripsi = $_POST['deskripsi'];
         $harga = $_POST['harga'];
 
@@ -136,7 +140,11 @@ class Menu
         $nama_menu = $_POST['nama_menu'];
         $id_menu = $_POST['id_menu'];
         $id_kategori = $_POST['kategori'];
-        $status = $_POST['status'];
+        if (empty($_POST['status'])) {
+            $status = "N";
+        } else {
+            $status = $_POST['status'];
+        }
         $deskripsi = $_POST['deskripsi'];
         $harga = $_POST['harga'];
         // Input nama gambar

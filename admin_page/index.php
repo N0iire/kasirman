@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once('../controller/db_config.php');
 include_once('../controller/UserController.php');
 include_once('../controller/MenuController.php');
 include_once('../controller/TransaksiController.php');
@@ -276,11 +277,15 @@ if ($_SESSION['login']) {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'transaksi') {
                     require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'view_order') {
+                    require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'kategori') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'edit_kategori') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'user') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit_user') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 }
                 ?>

@@ -36,19 +36,19 @@
                                     <td align="center" class="align-middle"><?php echo $data['nama_kasir']; ?><br></td>
                                     <td align="center" class="align-middle"><?php echo $data['id_kasir']; ?><br></td>
                                     <td align="center" class="align-middle">
-                                    <div class="btn-group">
-                                        <?php
-                                        $encry->word = $data['id_kasir'];
-                                        $id_kasir = $encry->encr();
-                                        ?>
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                        Action
-                                        </button>
-                                        <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="?p=edit_user&e=<?php echo $id_kasir?>">Edit</a>
-                                        <a class="dropdown-item" href="delete_user.php">Delete</a>
+                                        <div class="btn-group">
+                                            <?php
+                                            $encry->word = $data['id_kasir'];
+                                            $id_kasir = $encry->encr();
+                                            ?>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                Action
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="?p=edit_user&e=<?php echo $id_kasir ?>">Edit</a>
+                                                <a onclick="confirmation(event);" class="dropdown-item" href="page/delete_user.php?d=<?php echo $id_kasir ?>">Delete</a>
+                                            </div>
                                         </div>
-                                    </div>
                                     </td>
                                 </tr>
                             <?php $i++;

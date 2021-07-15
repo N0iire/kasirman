@@ -10,7 +10,6 @@
                 $encry->word = $data['id_kategori'];
                 $id_kategori = $encry->encr();
             ?>
-
                 <li class="active">
                     <a href="?k=<?php echo $data['nama_kategori']; ?>&i=<?php echo $id_kategori; ?>"><span class="fa fa-home"></span> <?php echo $data['nama_kategori']; ?></a>
                 </li>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once '../controller/db_config.php';
 include_once '../controller/UserController.php';
 $user = new User();
 

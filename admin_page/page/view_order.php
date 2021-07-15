@@ -1,44 +1,97 @@
-<div class="container-fluid">
+<?php
+session_start();
+include_once('../../controller/db_config.php');
+include_once('../../controller/DetailTransaksiController.php');
+include_once('../../controller/TransaksiController.php');
+include_once('../../controller/UserController.php');
+include_once('../../controller/Function.php');
+if ($_SESSION['login']) {
+    $encry = new Enkripsi();
+    $user = new User();
+    $transaksi = new Transaksi();
+    $detail_trans = new DetailTransaksi();
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Jumlah</th>
-                <th>Pesanan</th>
-                <th>subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $total = 0;
-            include 'db_connect.php';
-            $qry = $conn->query("SELECT * FROM order_list o inner join product_list p on o.product_id = p.id  where order_id =" . $_GET['id']);
-            while ($row = $qry->fetch_assoc()) :
-                $total += $row['qty'] * $row['price'];
-            ?>
-                <tr>
-                    <td><?php echo $row['qty'] ?></td>
-                    <td><?php echo $row['name'] ?></td>
-                    <td><?php echo number_format($row['qty'] * $row['price'], 2) ?></td>
-                </tr>
-            <?php endwhile; ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th colspan="2" class="text-right">TOTAL</th>
-                <th><?php echo number_format($total, 2) ?></th>
-            </tr>
+    $encry->word = $_GET['id'];
+    $key = $encry->decr();
+    $data_transaksi = $transaksi->view($key);
+    $data_kasir = $data_transaksi['id_kasir'];
+    $kasir = $user->view($data_kasir);
+    $data_detail_trans = $detail_trans->view($key);
+} else {
+    header("location:../../public/login.php");
+    die();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-        </tfoot>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="4">KASIRMAN</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th colspan="4">-------------------------------------------------</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Kasir : <?php echo $kasir['nama_kasir'] ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Tanggal : <?php echo $data_transaksi['tgl'] ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                No Struk : <?php echo $data_transaksi['no_struk'] ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Pembeli : <?php echo $data_transaksi['pembeli'] ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                --------------------------------------------------
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Nama Menu</td>
+            <td>Jumlah</td>
+            <td>Subtotal</td>
+        </tr>
+        <?php foreach ($data_detail_trans as $data) { ?>
+            <tr>
+                <td colspan="2"><?php echo $data['nama_menu'] ?></td>
+                <td colspan="1"><?php echo $data['jumlah'] ?></td>
+                <td colspan="2"><?php echo $data['harga'] ?></td>
+            </tr>
+        <?php } ?>
+        <tr>
+            <td colspan="4">
+                --------------------------------------------------
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Total : Rp.<?php echo $data_transaksi['total'] ?>
+            </td>
+        </tr>
     </table>
-    <div class="text-center">
-        <button class="btn btn-primary" id="confirm" type="button" onclick="confirm_order()">Confirm</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button onclick="window.print()">CETAK</button>
+</body>
 
-    </div>
-</div>
-<style>
-    #uni_modal .modal-footer {
-        display: none
-    }
-</style>
+</html>
