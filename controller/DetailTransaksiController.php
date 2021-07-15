@@ -15,10 +15,10 @@ class DetailTransaksi
 
     public function view($no_struk)
     {
-        $sql = "SELECT * FROM detail_transaksi
-            INNER JOIN transaksi ON transaksi.no_struk = detail_transaksi.no_struk
-            INNER JOIN menu ON menu.id_menu = detail_transaksi.id_menu
-            WHERE detail_transaksi.no_struk = $no_struk
+        $sql = "SELECT c.harga, c.nama_menu, a.jumlah, a.total_harga FROM detail_transaksi a
+        INNER JOIN transaksi b ON b.no_struk = a.no_struk
+        INNER JOIN menu c ON c.id_menu = a.id_menu
+        WHERE a.no_struk = $no_struk
         ";
         $result = $this->db->query($sql);
         if ($result->num_rows > 0) {

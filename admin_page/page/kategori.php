@@ -1,3 +1,16 @@
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+    });
+</script>
 <?php
 $data_kategori = $kategori->get_all();
 if (isset($_POST['submit'])) {
@@ -5,36 +18,12 @@ if (isset($_POST['submit'])) {
     $nama_kat = $_POST['nama_kategori'];
     if ($kategori->store($id_kat, $nama_kat)) {
         echo "<script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-
         Toast.fire({
             icon: 'success',
             title: 'Tambah Data Berhasil!'
         })</script>";
     } else {
         echo "<script>    
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-   
             Toast.fire({
                 icon: 'error',
                 title: 'Tambah Data Gagal!'
@@ -69,33 +58,10 @@ if (isset($_POST['submit'])) {
                         </div>
                         <div>
                             <input type="submit" name="submit" value="submit" class="btn btn-warning">
-                            <input type="reset" name="cancel" value="cancel" class="btn btn-light">
                         </div>
                     </div>
                 </form>
             </tbody>
-            <!--?php    //ieu tadina rek nambah kategori, ngan gagal malah error jd dikieukeun we hela :)
-                if (isset($_POST["submit"])) {
-                    $db = store();
-                    if ($db->connect_errno == 0) {
-                ?>
-                                <center>
-                                <div class="alert alert-success alert-dismissible fade show">
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Sukses!</strong> Data Berhasil Disimpan
-                                </div>
-                                </center>
-                <!-?php
-                            }
-                        } else {
-                ?>
-                            <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Gagal! </strong>Data gagal disimpan karena nama kategori mungkin sudah ada.
-                            </div>
-                            <!-?php
-                        }
-                    } ?-->
         </div>
     </div>
     <!-- Column -->
@@ -144,22 +110,4 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- Column -->
 </div>
-<script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        iconColor: 'white',
-        customClass: {
-            popup: 'colored-toast'
-        },
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true
-    })
-
-    await Toast.fire({
-        icon: 'success',
-        title: 'Success'
-    })
-</script>
 <!-- Row -->

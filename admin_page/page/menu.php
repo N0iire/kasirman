@@ -1,39 +1,30 @@
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+    });
+</script>
 <?php
 $data_kategori = $kategori->get_all();
 $data_menu = $menu->get_all();
 if (isset($_POST['submit'])) {
     if ($menu->store()) {
-        echo "<script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-
+        echo "
+        <script>
         Toast.fire({
             icon: 'success',
             title: 'Tambah Data Berhasil!'
         })</script>";
     } else {
-        echo "<script>    
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-   
+        echo "
+        <script>
             Toast.fire({
                 icon: 'error',
                 title: 'Tambah Data Gagal!'
@@ -60,11 +51,11 @@ if (isset($_POST['submit'])) {
                     <div>
                         <div class="form-group">
                             <label for="nama_menu">Id Menu</label>
-                            <input type="text" class="form-control" id="id_menu" name="id_menu">
+                            <input type="text" class="form-control" id="id_menu" name="id_menu" required>
                         </div>
                         <div class="form-group">
                             <label for="nama_menu">Nama Menu</label>
-                            <input type="text" class="form-control" id="nama_menu" name="nama_menu">
+                            <input type="text" class="form-control" id="nama_menu" name="nama_menu" required>
                         </div>
                         <div class="form-group">
                             <label for="comment">Deskripsi Menu</label>
@@ -76,8 +67,8 @@ if (isset($_POST['submit'])) {
                         <label class="custom-control-label" for="switch1">Tersedia</label>
                     </div>
                     <br>Kategori
-                    <select name="kategori" class="custom-select">
-                        <option selected>Pilih Menu</option>
+                    <select name="kategori" class="custom-select" required>
+                        <option value="">Pilih Menu</option>
                         <?php foreach ($data_kategori as $data) { ?>
                             <option value="<?php echo $data['id_kategori'] ?>"><?php echo $data['nama_kategori'] ?></option>
                         <?php } ?>
@@ -85,10 +76,10 @@ if (isset($_POST['submit'])) {
                     <br><br>
                     <div class="form-group">
                         <label for="harga">Harga</label>
-                        <input type="text" class="form-control" id="harga" name="harga">
+                        <input type="text" class="form-control" id="harga" name="harga" required>
                     </div>
                     <div class="custom-file">
-                        <input name="gambar" type="file" class="custom-file-input" id="customFile">
+                        <input name="gambar" type="file" class="custom-file-input" id="customFile" required>
                     </div>
                     <br>
                     <div>
@@ -123,7 +114,8 @@ if (isset($_POST['submit'])) {
                                     <td align="center">
                                         <img src="../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;">
                                     </td>
-                                    <td><b>Nama :</b> <?php echo $data['nama_menu'] ?> <br>
+                                    <td><b>ID Menu :</b> <?php echo $data['id_menu'] ?> <br>
+                                        <b>Nama :</b> <?php echo $data['nama_menu'] ?> <br>
                                         <b>Deskripsi:</b> <?php echo $data['deskripsi'] ?><br>
                                         <b>Harga:</b> Rp.<?php echo $data['harga'] ?>,-<br>
                                         <b>Kategori:</b> <?php echo $data['nama_kategori'] ?><br>

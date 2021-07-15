@@ -9,53 +9,20 @@
         showConfirmButton: false,
         timer: 1500,
         timerProgressBar: true
-    })
-
-
-
-    function failed() {
-        await Toast.fire({
-            icon: 'error',
-            title: 'Gagal'
-        })
-    }
+    });
 </script>
-
 <?php
-$data_kasir = $kasir->view($id_for_edit);
+$data_user = $user->get_user($id_for_edit);
 if (isset($_POST['edit'])) {
-    if ($kasir->update($id_for_edit)) {
-        echo "<script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
 
+    if ($user->update($id_for_edit)) {
+        echo "<script>
         Toast.fire({
             icon: 'success',
             title: 'Edit Berhasil!'
         })</script>";
     } else {
         echo "<script>    
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-right',
-            iconColor: 'white',
-            customClass: {
-                popup: 'colored-toast'
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true
-        })
-   
             Toast.fire({
                 icon: 'error',
                 title: 'Edit Gagal!'
@@ -72,7 +39,7 @@ if (isset($_POST['edit'])) {
                 <tr>
                     <th>
                         <center>
-                            <h3> Form Edit User</h3>
+                            <h3> Form Edit Kasir</h3>
                         </center>
                     </th>
                 </tr>
@@ -81,22 +48,24 @@ if (isset($_POST['edit'])) {
                 <form method="POST" enctype="multipart/form-data">
                     <div>
                         <div class="form-group">
-                            <label for="nama_kasir">Name</label>
-                            <input type="text" class="form-control" id="nama_kasir" name="nama_kasir" value="<?php echo $data_kasir['nama_kasir'] ?>">
+                            <label for="id_kategori">ID Kasir</label>
+                            <input type="text" class="form-control" name="id_kasir" value="<?php echo $data_user['id_kasir'] ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="id_kasir">Username</label>
-                            <input type="text" class="form-control" id="id_kasir" name="id_kasir" value="<?php echo $data_kasir['id_kasir'] ?>">
+                            <label for="nama_kategori">Nama Kasir</label>
+                            <input type="text" class="form-control" name="nama_kasir" value="<?php echo $data_user['nama_kasir'] ?>" required>
                         </div>
                         <div>
-                            <input type="submit" name="edit" value="Ubah" class="btn btn-primary">
+                            <input type="submit" name="edit" value="Ubah" class="btn btn-warning">
                             <input type="reset" name="cancel" value="cancel" class="btn btn-light">
                         </div>
                     </div>
                 </form>
             </tbody>
-           
         </div>
     </div>
-   
+    <!-- Column -->
+    <!-- Column -->
+    <!-- Column -->
 </div>
+<!-- Row -->
